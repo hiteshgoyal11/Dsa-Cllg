@@ -221,18 +221,32 @@ public class DsaCllgBasics {
 
 
     // 16.
-    public static void PrimeNum(int num) {
-        if(num <= 1) {
-            System.out.println("Not a prime number");
-            return;
-        }
-        for(int i=2; i<=Math.sqrt(num); i++) {
-            if(num % i == 0) {
-                System.out.println("Not a prime number");
-                return;
+    // public static void PrimeNum(int num) {
+    //     if(num <= 1) {
+    //         System.out.println("Not a prime number");
+    //         return;
+    //     }
+    //     for(int i=2; i<=Math.sqrt(num); i++) {
+    //         if(num % i == 0) {
+    //             System.out.println("Not a prime number");
+    //             return;
+    //         }
+    //     }
+    //     System.out.println("The number is prime");
+    // }
+
+
+    // 17.
+    public static void CountEvenDigits(int num) {
+        int count = 0;
+        while(num > 0) {
+            int digit = num % 10;
+            if(digit % 2 == 0) {
+                count++;
             }
+            num /= 10;
         }
-        System.out.println("The number is prime");
+        System.out.println("Count Even Digits "+count);
     }
 
     public static void main(String[] args) {
@@ -306,7 +320,12 @@ public class DsaCllgBasics {
 
 
         // Problem 16
-        int num = 9;
-        PrimeNum(num);
+        // int num = 9;
+        // PrimeNum(num);
+
+
+        // Problem 18
+        int num = 2468;
+        CountEvenDigits(num);
     }
 }
