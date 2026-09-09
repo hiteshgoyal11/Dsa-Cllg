@@ -205,18 +205,34 @@ public class DsaCllgBasics {
 
 
     // 15.
-    public static void RemoveZeroes(int num) {
-        int result = 0;
-        int multiplier = 1;
-        while(num > 0) {
-            int digit = num % 10;
-            if(digit != 0) {
-                result += digit * multiplier;
-                multiplier *= 10;
-            }
-            num /= 10;
+    // public static void RemoveZeroes(int num) {
+    //     int result = 0;
+    //     int multiplier = 1;
+    //     while(num > 0) {
+    //         int digit = num % 10;
+    //         if(digit != 0) {
+    //             result += digit * multiplier;
+    //             multiplier *= 10;
+    //         }
+    //         num /= 10;
+    //     }
+    //     System.out.println("The number after removing zeroes is " +result);
+    // }
+
+
+    // 16.
+    public static void PrimeNum(int num) {
+        if(num <= 1) {
+            System.out.println("Not a prime number");
+            return;
         }
-        System.out.println("The number after removing zeroes is " +result);
+        for(int i=2; i<=Math.sqrt(num); i++) {
+            if(num % i == 0) {
+                System.out.println("Not a prime number");
+                return;
+            }
+        }
+        System.out.println("The number is prime");
     }
 
     public static void main(String[] args) {
@@ -285,7 +301,12 @@ public class DsaCllgBasics {
 
 
         // Problem 15
-        int num = 102030;
-        RemoveZeroes(num);
+        // int num = 102030;
+        // RemoveZeroes(num);
+
+
+        // Problem 16
+        int num = 9;
+        PrimeNum(num);
     }
 }
