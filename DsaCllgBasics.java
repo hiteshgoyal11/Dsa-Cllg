@@ -236,17 +236,31 @@ public class DsaCllgBasics {
     // }
 
 
-    // 17.
-    public static void CountEvenDigits(int num) {
+    // 18.
+    // public static void CountEvenDigits(int num) {
+    //     int count = 0;
+    //     while(num > 0) {
+    //         int digit = num % 10;
+    //         if(digit % 2 == 0) {
+    //             count++;
+    //         }
+    //         num /= 10;
+    //     }
+    //     System.out.println("Count Even Digits "+count);
+    // }
+
+
+    // 19.
+    public static void CountOddDigits(int num) {
         int count = 0;
         while(num > 0) {
             int digit = num % 10;
-            if(digit % 2 == 0) {
+            if(digit % 2 != 0) {
                 count++;
             }
             num /= 10;
         }
-        System.out.println("Count Even Digits "+count);
+        System.out.println("Count odd digits " +count);
     }
 
     public static void main(String[] args) {
@@ -325,7 +339,12 @@ public class DsaCllgBasics {
 
 
         // Problem 18
-        int num = 2468;
-        CountEvenDigits(num);
+        // int num = 2468;
+        // CountEvenDigits(num);
+
+
+        // Problem 19
+        int num = 1357;
+        CountOddDigits(num);
     }
 }
