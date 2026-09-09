@@ -251,16 +251,43 @@ public class DsaCllgBasics {
 
 
     // 19.
-    public static void CountOddDigits(int num) {
-        int count = 0;
+    // public static void CountOddDigits(int num) {
+    //     int count = 0;
+    //     while(num > 0) {
+    //         int digit = num % 10;
+    //         if(digit % 2 != 0) {
+    //             count++;
+    //         }
+    //         num /= 10;
+    //     }
+    //     System.out.println("Count odd digits " +count);
+    // }
+
+    // 20.
+    // public static void SumOfEvenDigits(int num) {
+    //     int sumeven = 0;
+    //     while(num > 0) {
+    //         int digit = num % 10;
+    //         if(digit % 2 == 0) {
+    //             sumeven += digit;
+    //         }
+    //         num /= 10;
+    //     }
+    //     System.out.println("The Sum of Event Digits " +sumeven);
+    // }
+
+
+    // 21.
+    public static void SumOfOddDigits(int num) {
+        int sumodd = 0;
         while(num > 0) {
             int digit = num % 10;
             if(digit % 2 != 0) {
-                count++;
+                sumodd += digit;
             }
             num /= 10;
         }
-        System.out.println("Count odd digits " +count);
+        System.out.println("The sum of odd digits " +sumodd);
     }
 
     public static void main(String[] args) {
@@ -344,7 +371,17 @@ public class DsaCllgBasics {
 
 
         // Problem 19
-        int num = 1357;
-        CountOddDigits(num);
+        // int num = 1357;
+        // CountOddDigits(num);
+
+
+        // Problem 20
+        // int num = 246;
+        // SumOfEvenDigits(num);
+
+
+        // Problem 21
+        int num = 135;
+        SumOfOddDigits(num);
     }
 }
