@@ -278,16 +278,29 @@ public class DsaCllgBasics {
 
 
     // 21.
-    public static void SumOfOddDigits(int num) {
-        int sumodd = 0;
-        while(num > 0) {
-            int digit = num % 10;
-            if(digit % 2 != 0) {
-                sumodd += digit;
-            }
-            num /= 10;
+    // public static void SumOfOddDigits(int num) {
+    //     int sumodd = 0;
+    //     while(num > 0) {
+    //         int digit = num % 10;
+    //         if(digit % 2 != 0) {
+    //             sumodd += digit;
+    //         }
+    //         num /= 10;
+    //     }
+    //     System.out.println("The sum of odd digits " +sumodd);
+    // }
+
+
+    // 32.
+    public static void BuzzNum(int num) {
+        int digit = num % 10;
+        if(digit == 7) {
+            System.out.println("Buzz Number");
+        } else if(num % 7 == 0) {
+            System.out.println("Buzz Number");
+        } else {
+            System.out.println("Not a buzz number");
         }
-        System.out.println("The sum of odd digits " +sumodd);
     }
 
     public static void main(String[] args) {
@@ -381,7 +394,12 @@ public class DsaCllgBasics {
 
 
         // Problem 21
-        int num = 135;
-        SumOfOddDigits(num);
+        // int num = 135;
+        // SumOfOddDigits(num);
+
+
+        // Problem 32
+        int num = 7;
+        BuzzNum(num);
     }
 }
