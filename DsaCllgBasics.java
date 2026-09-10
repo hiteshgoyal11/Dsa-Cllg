@@ -292,14 +292,44 @@ public class DsaCllgBasics {
 
 
     // 32.
-    public static void BuzzNum(int num) {
-        int digit = num % 10;
-        if(digit == 7) {
-            System.out.println("Buzz Number");
-        } else if(num % 7 == 0) {
-            System.out.println("Buzz Number");
-        } else {
-            System.out.println("Not a buzz number");
+    // public static void BuzzNum(int num) {
+    //     int digit = num % 10;
+    //     if(digit == 7) {
+    //         System.out.println("Buzz Number");
+    //     } else if(num % 7 == 0) {
+    //         System.out.println("Buzz Number");
+    //     } else {
+    //         System.out.println("Not a buzz number");
+    //     }
+    // }
+
+
+    // 33.
+    public static void HappyNum(int num) {
+        int sum = 0;
+        while(num > 0) {
+            int digit = num % 10;
+            int sq = digit * digit;
+            sum += sq;
+            if(sum == 1) {
+                System.out.println("Happy Number");
+                return;
+            }
+            num /= 10;
+            if(num <= 0 && sum != 1) {
+                num = sum;
+                sum = 0;
+            }
+            while(num > 0) {
+                int digit2 = num % 10;
+                int sq2 = digit2 * digit2;
+                sum += sq2;
+                if(sum == 1) {
+                    System.out.println("Happy Number");
+                    return;
+                }
+                num /= 10;
+            }
         }
     }
 
@@ -399,7 +429,7 @@ public class DsaCllgBasics {
 
 
         // Problem 32
-        int num = 7;
-        BuzzNum(num);
+        // int num = 7;
+        // BuzzNum(num);
     }
 }
