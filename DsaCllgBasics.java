@@ -306,31 +306,33 @@ public class DsaCllgBasics {
 
     // 33.
     public static void HappyNum(int num) {
-        int sum = 0;
-        while(num > 0) {
-            int digit = num % 10;
-            int sq = digit * digit;
-            sum += sq;
-            if(sum == 1) {
-                System.out.println("Happy Number");
-                return;
-            }
-            num /= 10;
-            if(num <= 0 && sum != 1) {
-                num = sum;
-                sum = 0;
-            }
-            while(num > 0) {
-                int digit2 = num % 10;
-                int sq2 = digit2 * digit2;
-                sum += sq2;
-                if(sum == 1) {
-                    System.out.println("Happy Number");
-                    return;
-                }
-                num /= 10;
-            }
+
+        int slow = num;
+        int fast = num;
+
+        do {
+            slow = sumOfSquares(slow);
+            fast = sumOfSquares(sumOfSquares(fast));
+        } while (slow != fast);
+
+        if (slow == 1) {
+            System.out.println("Happy Number");
+        } else {
+            System.out.println("Not a Happy Number");
         }
+    }
+
+    public static int sumOfSquares(int num) {
+
+        int sum = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            sum += digit * digit;
+            num /= 10;
+        }
+
+        return sum;
     }
 
     public static void main(String[] args) {
@@ -431,5 +433,10 @@ public class DsaCllgBasics {
         // Problem 32
         // int num = 7;
         // BuzzNum(num);
+
+
+        // Problem 33
+        int num = 19;
+        HappyNum(num);
     }
 }
